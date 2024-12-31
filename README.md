@@ -1,36 +1,199 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Full-Stack E-Commerce
 
-## Getting Started
+A modern and robust e-commerce application built with Next.js 15, TypeScript, Tailwind CSS, and Sanity CMS. This application offers a seamless shopping experience with features like user authentication, cart management, and a headless CMS for product management.
 
-First, run the development server:
+## ✨ Features
 
+- 🛍️ Dynamic product catalog
+- 🔐 User authentication with Clerk
+- 🛒 Shopping cart management with Zustand
+- 📱 Responsive and modern design
+- 🎨 Custom UI with Tailwind CSS and Radix UI
+- 🖼️ Content management with Sanity CMS
+- ⚡ Optimized performance with Next.js 15
+- 🔄 Global state with Zustand
+- 🎭 Smooth animations with Framer Motion
+
+## 🛠️ Tech Stack
+
+**Frontend**  
+- Next.js 15.1.0
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Radix UI Components
+- Clerk Authentication
+
+**Backend & CMS**  
+- Sanity v3
+- Next.js API Routes
+- Clerk Authentication
+
+**State & Management**  
+- Zustand for global state
+- Sanity Client for content management
+
+**Commands for code formatting**  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install --save-dev eslint eslint-config-next bunx eslint --init
+
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Clone the repository
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone [repository-url]
+cd Full-Stack-E-Commerce
+```
 
-## Learn More
+### 2. Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Set up environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a `.env.local` file based on `.env.example`:
 
-## Deploy on Vercel
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
+NEXT_PUBLIC_SANITY_DATASET=production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Clerk keys
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-key
+CLERK_SECRET_KEY=your-clerk-secret
+
+# Sanity API token
+SANITY_API_READ_TOKEN=your-sanity-token
+
+# Stripe keys
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-stripe-key
+STRIPE_SECRET_KEY=your-stripe-secret
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+```
+
+### 4. Start the development server
+
+- **Development with Turbopack**  
+  ```bash
+  bun run dev
+  ```
+
+- **Development with Sanity Studio**  
+  ```bash
+  bun run dev:sanity
+  ```
+
+## 📁 Project Structure
+
+```
+├── app/                # Next.js routes and pages
+├── components/         # Reusable components
+│   ├── ui/            # Base UI components
+│   └── ...            # Other components
+├── lib/               # Utilities and configurations
+├── public/            # Static files
+├── sanity/            # Sanity configuration and schemas
+├── store/             # Global state with Zustand
+└── types/             # TypeScript type definitions
+```
+
+## 🧩 Core Components
+
+- **Header.tsx**: Main navigation and cart
+- **ProductGrid.tsx**: Product grid display
+- **AddToBasketButton.tsx**: Cart management
+- **BlackFridayBanner.tsx**: Promotional banner
+- **ProductThumb.tsx**: Product preview
+
+## 🔧 Hooks and Utilities
+
+- Zustand store for cart management
+- Custom hooks for products and categories
+- Sanity utilities for image and content management
+
+## 📚 API Documentation
+
+The application uses the following APIs:
+
+- **Clerk** for authentication
+- **Sanity** for content management
+- **Next.js API Routes** for custom endpoints
+
+## 🎨 Design and UI
+
+- Custom design system with Tailwind CSS
+- Radix UI components for accessibility
+- Framer Motion animations
+- Responsive design for all screens
+
+## Dependencies and Scripts
+
+```json
+"dependencies": {
+   "@commitlint/cli": "^19.6.0",
+   "@commitlint/config-conventional": "^19.6.0",
+   "commitlint": "^19.6.0",
+   "eslint": "9.17.0",
+   "eslint-config-prettier": "^9.1.0",
+   "eslint-plugin-prettier": "^5.2.1",
+   "husky": "^9.1.7",
+   "prettier": "^3.4.2"
+}
+```
+
+**Commands for Husky:**
+
+```bash
+npx husky add .husky/pre-commit "bun run format && bun run lint"
+npx husky add .husky/commit-msg "bun x --no-install commitlint --edit $1"
+```
+
+## 🤝 Contributing
+
+Contributions are welcome. Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 🔜 Roadmap
+
+- [x] Add multiple payment gateways
+- Implement wishlist functionality
+- Add product reviews and ratings
+- [x] Integrate email notifications
+- Add social sharing features
+- Implement advanced filtering options
+- Add multi-language support
+- Integrate with multiple shipping providers
+
+## 💡 Best Practices
+
+- Follows Next.js 15 best practices
+- Implements modern React patterns
+- Uses TypeScript for type safety
+- Follows accessibility guidelines
+- Implements SEO best practices
+- Uses modern CSS techniques
+- Follows security best practices
+- Implements performance optimizations
+
+## 📝 License
+
+This project is under the MIT License.
+
+## 👥 Author
+
+[SHAIK ABDULHAMEED]
+
+---
