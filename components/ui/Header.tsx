@@ -29,7 +29,7 @@ function Header() {
         </Link>
         <ClerkLoaded>
           <SignedIn>
-              <Link href="/account" className="w-36  flex-1 relative flex justify-center sm:justify-start sm:flex-none items-center space-x-2 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"><span>My Orders</span>
+              <Link href="/account" className="  flex-1 relative flex justify-center sm:justify-start sm:flex-none items-center space-x-2 bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"><span>My Orders</span>
               </Link>
               </SignedIn>
           {
