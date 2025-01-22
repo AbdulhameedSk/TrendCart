@@ -1,5 +1,7 @@
+'use client'
 import { Product } from "@/sanity.types";
 import { AnimatePresence, motion } from 'framer-motion'
+import ProductThumb from "./ProductThumb";
 export function ProductGrid({ products }: { products: Product[] }) {
     return <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4 ">
         {products.map((product) => {
@@ -14,7 +16,7 @@ export function ProductGrid({ products }: { products: Product[] }) {
                     className="flex just
                     ify-center"
                     >
-            {/* <ProductThumb key={product._id} product={product} />); */}
+            <ProductThumb key={product._id} product={product} />
             </motion.div>
             </AnimatePresence>   
             )
